@@ -8,6 +8,7 @@ type Order {
     date: String!
     userId: ID!
     productIds: [ID!]!
+    user: User
 }
 
 type Query {
