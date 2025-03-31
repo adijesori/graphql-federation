@@ -1,6 +1,7 @@
 package com.example.users;
 
 import com.example.users.controllers.MainController;
+import com.example.users.entities.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.graphql.GraphQlTest;
@@ -15,16 +16,9 @@ public class GraphQLTests {
     @Test
     void shouldGetAuthorByID() {
         this.graphQlTester
-				.documentName("authorDetails")
-				.variable("id", "author-1")
+				.documentName("users")
                 .execute()
-                .path("authorById")
-                .matchesJson("""
-                    {
-                        "id": "author-1",
-                        "firstName": "Joshua",
-                        "lastName": "Bloch"
-                    }
-                """);
+                .path("users")
+                .entityList(User.class).hasSize(4);
     }
 }

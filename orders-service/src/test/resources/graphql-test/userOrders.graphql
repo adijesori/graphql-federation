@@ -1,0 +1,12 @@
+query UserOrders($id: ID!) {
+    __entities(representations: [{
+        __typename: "User"
+        id: $id
+    }]) {
+        ...on User {
+            userOrders {
+                date
+            }
+        }
+    }
+}

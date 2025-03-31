@@ -1,7 +1,0 @@
-query AuthorDetailsTest($id: ID!) {
-    authorById(id: $id) {
-        id
-        firstName
-        lastName
-    }
-}
