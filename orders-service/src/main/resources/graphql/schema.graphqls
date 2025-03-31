@@ -3,7 +3,7 @@ type User @key(fields: "id") {
     userOrders: [Order]
 }
 
-type Order {
+type Order @key(fields: "id") {
     id: ID!
     date: String!
     userId: ID!

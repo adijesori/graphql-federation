@@ -15,4 +15,11 @@ public record User(String id, String name, String address) {
     public static List<User> getAll() {
         return users;
     }
+
+    public static User getUserById(String id) {
+        return users.stream()
+                .filter(user -> user.id.equals(id))
+                .findFirst()
+                .orElse(null);
+    }
 }

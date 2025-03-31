@@ -7,3 +7,9 @@ type User @key(fields: "id") {
 type Query {
     users: [User!]!
 }
+
+type Order @key(fields: "id") {
+    id: ID!
+    userId: ID! @external
+    user: User @requires(fields: "userId")
+}
