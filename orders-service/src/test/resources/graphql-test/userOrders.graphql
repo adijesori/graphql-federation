@@ -1,7 +1,7 @@
-query UserOrders($id: ID!) {
-    __entities(representations: [{
+query UserOrders {
+    _entities(representations: [{
         __typename: "User"
-        id: $id
+        id: "user-1"
     }]) {
         ...on User {
             userOrders {

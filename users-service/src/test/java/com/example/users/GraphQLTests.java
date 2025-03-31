@@ -14,7 +14,7 @@ public class GraphQLTests {
     private GraphQlTester graphQlTester;
 
     @Test
-    void shouldGetAuthorByID() {
+    void shouldGetUsers() {
         this.graphQlTester
 				.documentName("users")
                 .execute()
