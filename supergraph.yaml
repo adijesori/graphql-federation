@@ -1,0 +1,10 @@
+federation_version: =2.4.7
+subgraphs:
+  orders:
+    routing_url: http://localhost:8080/graphql
+    schema:
+      file: ./orders-service/src/main/resources/graphql/schema.graphqls
+  users:
+    routing_url: http://localhost:8081/graphql
+    schema:
+      file: ./users-service/src/main/resources/graphql/schema.graphqls

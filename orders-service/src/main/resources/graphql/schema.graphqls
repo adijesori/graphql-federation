@@ -1,0 +1,15 @@
+type User @key(fields: "id") {
+    id: ID!
+    userOrders: [Order]
+}
+
+type Order {
+    id: ID!
+    date: String!
+    userId: ID!
+    productIds: [ID!]!
+}
+
+type Query {
+    orders: [Order!]!
+}
